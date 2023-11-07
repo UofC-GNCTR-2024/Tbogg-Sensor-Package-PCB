@@ -11,15 +11,15 @@ The sensor package (strain, temperature, vibration) for the 2024 UofC GNCTR tbog
 	* Sensing via HX711 chip
 2. **1x** On-PCB Temperature Sensor (STDS75DS2F)
 	* I2C
-3. **4x** In-Concrete Temperature Sensors
-	* Get from BIRDS-X board
-	* I2C Comms
+3. **2x** In-Concrete Temperature Sensors
+	* Thermistor-based
 4. **1x** Vibration Sensor
 	* Model: MPU-6050 Breakout
 	* I2C Comms
 5. I2C Optical Flow Sensor
-6. Battery: nx 18650
+6. Battery: 4x 18650
 	* TODO: choose quantity, model, holder, and connection
+	* In series
 7. Battery Management System: probably the 3V3 buck-boost from the balloon project
 	* TODO: more info
 8. Wireless Comms: LoRa Wio E5
