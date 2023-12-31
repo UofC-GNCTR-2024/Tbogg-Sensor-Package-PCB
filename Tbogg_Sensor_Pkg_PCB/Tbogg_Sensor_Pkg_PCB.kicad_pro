@@ -274,7 +274,10 @@
       "version": 3
     },
     "net_colors": null,
-    "netclass_assignments": null,
+    "netclass_assignments": {
+      "Net-(J202-In)": "RF_50ohm",
+      "Net-(U201-RFIO)": "RF_50ohm"
+    },
     "netclass_patterns": []
   },
   "pcbnew": {
@@ -326,6 +329,18 @@
     [
       "0c5206d2-e93c-4909-a036-277747fe97e9",
       ""
+    ],
+    [
+      "86485861-e1aa-4b49-a19f-21ede6264de8",
+      "LoRa_Module"
+    ],
+    [
+      "4217116e-113e-478b-bb6a-0902632607f8",
+      "Power"
+    ],
+    [
+      "eb6cdffc-2b5e-4003-9648-589bff10dd76",
+      "ModulesA"
     ]
   ],
   "text_variables": {}
