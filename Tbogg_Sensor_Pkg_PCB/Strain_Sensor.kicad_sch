@@ -4,6 +4,11 @@
 
   (paper "USLetter")
 
+  (title_block
+    (date "2024-01-01")
+    (rev "Rev1")
+  )
+
   (lib_symbols
     (symbol "Amplifier_Operational:MCP6002-xP" (pin_names (offset 0.127)) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 5.08 0)
@@ -1009,14 +1014,14 @@
     (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" (at 68.58 154.94 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "6" (uuid b2bc3689-4141-4186-b303-7f8e504a5a5a))
-    (pin "5" (uuid 271c6128-c068-4afa-9b1a-8f9d6a860259))
-    (pin "1" (uuid 8d7413bb-4b83-4066-82c1-ea9940eed921))
-    (pin "8" (uuid aacf405f-ac1d-440b-8d58-c6605b28dc56))
-    (pin "2" (uuid 706128b8-e54c-49e4-aed6-256df74dda8f))
-    (pin "7" (uuid 27dee33a-3c58-4034-8957-3145f5d39c3a))
-    (pin "3" (uuid e87a3481-e710-46b2-a85f-2bfbe6ca4898))
-    (pin "4" (uuid 6c93e89a-8ea1-4aff-8b2b-cc74d721a39d))
+    (pin "6" (uuid b2bc3689-4141-4186-b303-7f8e504a5a5b))
+    (pin "5" (uuid 271c6128-c068-4afa-9b1a-8f9d6a86025a))
+    (pin "1" (uuid 8d7413bb-4b83-4066-82c1-ea9940eed922))
+    (pin "8" (uuid aacf405f-ac1d-440b-8d58-c6605b28dc57))
+    (pin "2" (uuid 706128b8-e54c-49e4-aed6-256df74dda90))
+    (pin "7" (uuid 27dee33a-3c58-4034-8957-3145f5d39c3b))
+    (pin "3" (uuid e87a3481-e710-46b2-a85f-2bfbe6ca4899))
+    (pin "4" (uuid 6c93e89a-8ea1-4aff-8b2b-cc74d721a39e))
     (instances
       (project "Tbogg_Sensor_Pkg_PCB"
         (path "/0c5206d2-e93c-4909-a036-277747fe97e9/9ac24c97-6905-47ba-85be-529359d0d414"
@@ -1150,14 +1155,14 @@
     (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" (at 53.34 190.5 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "6" (uuid b2bc3689-4141-4186-b303-7f8e504a5a5a))
-    (pin "5" (uuid 271c6128-c068-4afa-9b1a-8f9d6a860259))
-    (pin "1" (uuid 8d7413bb-4b83-4066-82c1-ea9940eed921))
-    (pin "8" (uuid aacf405f-ac1d-440b-8d58-c6605b28dc56))
-    (pin "2" (uuid 706128b8-e54c-49e4-aed6-256df74dda8f))
-    (pin "7" (uuid 27dee33a-3c58-4034-8957-3145f5d39c3a))
-    (pin "3" (uuid e87a3481-e710-46b2-a85f-2bfbe6ca4898))
-    (pin "4" (uuid 6c93e89a-8ea1-4aff-8b2b-cc74d721a39d))
+    (pin "6" (uuid b2bc3689-4141-4186-b303-7f8e504a5a5c))
+    (pin "5" (uuid 271c6128-c068-4afa-9b1a-8f9d6a86025b))
+    (pin "1" (uuid 8d7413bb-4b83-4066-82c1-ea9940eed923))
+    (pin "8" (uuid aacf405f-ac1d-440b-8d58-c6605b28dc58))
+    (pin "2" (uuid 706128b8-e54c-49e4-aed6-256df74dda91))
+    (pin "7" (uuid 27dee33a-3c58-4034-8957-3145f5d39c3c))
+    (pin "3" (uuid e87a3481-e710-46b2-a85f-2bfbe6ca489a))
+    (pin "4" (uuid 6c93e89a-8ea1-4aff-8b2b-cc74d721a39f))
     (instances
       (project "Tbogg_Sensor_Pkg_PCB"
         (path "/0c5206d2-e93c-4909-a036-277747fe97e9/9ac24c97-6905-47ba-85be-529359d0d414"

@@ -4,6 +4,11 @@
 
   (paper "USLetter")
 
+  (title_block
+    (date "2024-01-01")
+    (rev "Rev1")
+  )
+
   (lib_symbols
     (symbol "00_This_Project_Symbol_Lib:ESP32-Module-30Pin" (in_bom yes) (on_board yes)
       (property "Reference" "U" (at -20.32 19.05 0)
