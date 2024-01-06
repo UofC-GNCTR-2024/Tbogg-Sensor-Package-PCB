@@ -53,8 +53,8 @@ printSwitchExtenders  = true;
 
 
 //-- pcb dimensions -- very important!!!
-pcbLength           = 150; // Front to back
-pcbWidth            = 100; // Side to side
+pcbLength           = 94; // Front to back
+pcbWidth            = 97; // Side to side
 pcbThickness        = 1.6;
                             
 //-- padding between pcb and inside wall
@@ -86,8 +86,8 @@ roundRadius         = 3.0;
 //-- How much the PCB needs to be raised from the base
 //-- to leave room for solderings and whatnot
 standoffHeight      = 10.0;  //-- used for PCB Supports, Push Button and showPCB
-standoffDiameter    = 7;
-standoffPinDiameter = 2.4;
+standoffDiameter    = 6;
+standoffPinDiameter = 2.6; // M3 screw hole (3.2mm ID)
 standoffHoleSlack   = 0.4;
 
 // Set the layer height of your printer
@@ -214,7 +214,7 @@ pcbStands =
 //-------------------------------------------------------------------
 connectors   =
 [
-//    [9, 15, 10, 2.5, 6 + 1.25, 4.0, 9, 4, yappFrontRight]
+   [9, 15, 10, 2.5, 6 + 1.25, 4.0, 9, 4, yappFrontRight]
 //   ,[9, 15, 10, 2.5, 6 + 1.25, 4.0, 9, yappNoFillet, yappFrontLeft]
 //   ,[34, 15, 10, 2.5, 6+ 1.25, 4.0, 9, yappFrontRight]
 //   ,[34, 15, 10, 2.5, 6+ 1.25, 4.0, 9, 0, yappFrontLeft]
