@@ -345,8 +345,8 @@ snapJoins   =
     // [15, 10, yappFront, yappCenter,    yappRectangle, yappSymmetric]
   //  ,[25, 10, yappBack,  yappSymmetric, yappCenter]
   //  ,[30, 10, yappLeft,  yappRight,     yappCenter,    yappSymmetric] // base
-   [(pcbLength+paddingFront+paddingBack+2*wallThickness)/2, 5, yappLeft,  yappRight, yappCenter ],
-   [(pcbWidth+paddingLeft+paddingRight+2*wallThickness)/2, 5, yappFront, yappBack, yappCenter  ],
+   [shellLength/2, 5, yappLeft,  yappRight, yappCenter ],
+   [shellWidth/2, 5, yappFront, yappBack, yappCenter  ],
 ];
 
 //===================================================================
