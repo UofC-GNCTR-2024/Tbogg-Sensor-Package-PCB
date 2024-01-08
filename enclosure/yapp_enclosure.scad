@@ -191,7 +191,7 @@ inspectZfromBottom        = true;       //-> View from the inspection cut up
 pcbStands = 
 [
 //- Add stands 5mm from each corner of the PCB
-  [2.5, 2.75, yappAllCorners]
+  [2.5, 2.75, yappAllCorners, yappPin]
 //    [5, 5]
 //-   Add posts 25mm from the corners of the box, with a custon height,diameter, Pin Size, hole
 //-   slack and filler radius.
@@ -298,7 +298,16 @@ cutoutsLid  =
 cutoutsFront =  
 [
   // USB out front
-  [pcbWidth/2, 0, 9, 3.5, 0, yappRectangle, 0, 0, yappCenter, yappCoordPCB]
+  [
+    pcbWidth/2, // center of PCB left-right
+    pcbThickness, // move up bc it's on the "top" of the PCB
+    9, // USB width
+    3.5, // USB height
+    0.8, // corner radius
+    yappRoundedRect,
+    0, 0,
+    yappCenter, yappCoordPCB
+  ]
 ];
 
 
@@ -336,9 +345,8 @@ snapJoins   =
     // [15, 10, yappFront, yappCenter,    yappRectangle, yappSymmetric]
   //  ,[25, 10, yappBack,  yappSymmetric, yappCenter]
   //  ,[30, 10, yappLeft,  yappRight,     yappCenter,    yappSymmetric] // base
-   [pcbLength/2, 5, yappLeft,  yappRight,  ],
-   [pcbWidth/2, 5, yappFront, yappBack,   ],
-
+   [(pcbLength+paddingFront+paddingBack+2*wallThickness)/2, 5, yappLeft,  yappRight, yappCenter ],
+   [(pcbWidth+paddingLeft+paddingRight+2*wallThickness)/2, 5, yappFront, yappBack, yappCenter  ],
 ];
 
 //===================================================================
