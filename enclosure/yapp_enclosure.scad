@@ -66,7 +66,7 @@ holeSepLength = 47; // X
 // echo("holeInFromEdgeLengthX: ", holeInFromEdgeLengthX);
 
 //-- padding between pcb and inside wall
-paddingFront        = 2;
+paddingFront        = 0; // must be right against the edge for the USB connector
 paddingBack         = 2;
 paddingRight        = 2;
 paddingLeft         = 2;
@@ -95,7 +95,7 @@ roundRadius         = 3.0;
 //-- to leave room for solderings and whatnot
 standoffHeight      = 9.0 + 1.0;  //-- used for PCB Supports, Push Button and showPCB
 standoffDiameter    = 5;
-standoffPinDiameter = 2.6; // M3 screw hole (3.2mm ID)
+standoffPinDiameter = 2.8; // M3 screw hole (3.2mm ID)
 standoffHoleSlack   = 0.4;
 
 // Set the layer height of your printer
@@ -345,8 +345,8 @@ snapJoins   =
     // [15, 10, yappFront, yappCenter,    yappRectangle, yappSymmetric]
   //  ,[25, 10, yappBack,  yappSymmetric, yappCenter]
   //  ,[30, 10, yappLeft,  yappRight,     yappCenter,    yappSymmetric] // base
-   [shellLength/2, 5, yappLeft,  yappRight, yappCenter ],
-   [shellWidth/2, 5, yappFront, yappBack, yappCenter  ],
+   [shellLength/2, 5, yappLeft,  yappRight, yappCenter ], // on long edge
+   // [shellWidth/2, 5, yappFront, yappBack, yappCenter  ], // on short edge
 ];
 
 //===================================================================
