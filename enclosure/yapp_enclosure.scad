@@ -188,7 +188,6 @@ pcbStands =
 //  [25, 25, 10, 10, 3.3, 0.9, 5, yappCoordBox] 
 ];
 
-
 //===================================================================
 //  *** Connectors ***
 //  Standoffs with hole through base and socket in lid for screw type connections.
@@ -275,6 +274,7 @@ cutoutsLid  =
 
 cutoutsFront =  
 [
+  // TODO: USB port cutout
 ];
 
 
