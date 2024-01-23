@@ -3,26 +3,26 @@
 //
 //  This is a box for <template>
 //
-//  Version 3.0 (16-12-2023)
+//  Version 3.0.1 (2024-01-15)
 //
 // This design is parameterized based on the size of a PCB.
 //
-//  for many or complex cutoutGrills you might need to adjust
-//  the number of elements:
+// For many/complex cutoutGrills, you might need to adjust
+//  the max number of elements in OpenSCAD:
 //
-//      Preferences->Advanced->Turn of rendering at 250000 elements
-//                                                  ^^^^^^
+//      Preferences->Advanced->Turn off rendering at 250000 elements
+//                                                   ^^^^^^
 //
 //-----------------------------------------------------------------------
 
-include <./YAPPgenerator_v30.scad>
+include <./YAPPgenerator_v3.scad>
 
 //---------------------------------------------------------
 // This design is parameterized based on the size of a PCB.
 //---------------------------------------------------------
 // Note: length/lengte refers to X axis, 
-//       width/breedte to Y, 
-//       height/hoogte to Z
+//       width/breedte refers to Y axis,
+//       height/hoogte refers to Z axis
 
 /*
       padding-back|<------pcb length --->|<padding-front
@@ -53,8 +53,8 @@ printSwitchExtenders  = true;
 
 
 //-- pcb dimensions -- very important!!!
-pcbLength           = 94; // Front to back
-pcbWidth            = 97; // Side to side
+pcbLength           = 150; // front to back (X axis)
+pcbWidth            = 100; // side to side (Y axis)
 pcbThickness        = 1.6;
                             
 //-- padding between pcb and inside wall
@@ -86,8 +86,8 @@ roundRadius         = 3.0;
 //-- How much the PCB needs to be raised from the base
 //-- to leave room for solderings and whatnot
 standoffHeight      = 10.0;  //-- used for PCB Supports, Push Button and showPCB
-standoffDiameter    = 6;
-standoffPinDiameter = 2.6; // M3 screw hole (3.2mm ID)
+standoffDiameter    = 7;
+standoffPinDiameter = 2.4;
 standoffHoleSlack   = 0.4;
 
 // Set the layer height of your printer
@@ -214,7 +214,7 @@ pcbStands =
 //-------------------------------------------------------------------
 connectors   =
 [
-   [9, 15, 10, 2.5, 6 + 1.25, 4.0, 9, 4, yappFrontRight]
+//    [9, 15, 10, 2.5, 6 + 1.25, 4.0, 9, 4, yappFrontRight]
 //   ,[9, 15, 10, 2.5, 6 + 1.25, 4.0, 9, yappNoFillet, yappFrontLeft]
 //   ,[34, 15, 10, 2.5, 6+ 1.25, 4.0, 9, yappFrontRight]
 //   ,[34, 15, 10, 2.5, 6+ 1.25, 4.0, 9, 0, yappFrontLeft]
