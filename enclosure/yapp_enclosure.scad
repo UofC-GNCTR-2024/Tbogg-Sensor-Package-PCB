@@ -51,17 +51,16 @@ printBaseShell        = true;
 printLidShell         = true;
 printSwitchExtenders  = true;
 
-
 //-- pcb dimensions -- very important!!!
-pcbLength           = 150; // front to back (X axis)
-pcbWidth            = 100; // side to side (Y axis)
+pcbLength           = 97; // front to back (X axis)
+pcbWidth            = 52; // side to side (Y axis)
 pcbThickness        = 1.6;
                             
 //-- padding between pcb and inside wall
-paddingFront        = 2;
-paddingBack         = 2;
-paddingRight        = 2;
-paddingLeft         = 2;
+paddingFront        = 3;
+paddingBack         = 3;
+paddingRight        = 3;
+paddingLeft         = 3;
 
 //-- Edit these parameters for your own box dimensions
 wallThickness       = 2.0;
@@ -74,8 +73,8 @@ lidPlaneThickness   = 1.5;
 //                       + basePlaneThickness
 //-- space between pcb and lidPlane :=
 //--      (bottonWallHeight+lidWallHeight) - (standoffHeight+pcbThickness)
-baseWallHeight      = 25;
-lidWallHeight       = 23;
+baseWallHeight      = 15;
+lidWallHeight       = 15;
 
 //-- ridge where base and lid off box can overlap
 //-- Make sure this isn't less than lidWallHeight
@@ -86,8 +85,8 @@ roundRadius         = 3.0;
 //-- How much the PCB needs to be raised from the base
 //-- to leave room for solderings and whatnot
 standoffHeight      = 10.0;  //-- used for PCB Supports, Push Button and showPCB
-standoffDiameter    = 7;
-standoffPinDiameter = 2.4;
+standoffDiameter    = 6;
+standoffPinDiameter = 3; // M3 (3.2mm) diameter
 standoffHoleSlack   = 0.4;
 
 // Set the layer height of your printer
@@ -183,7 +182,7 @@ inspectZfromBottom        = true;       //-> View from the inspection cut up
 pcbStands = 
 [
 //- Add stands 5mm from each corner of the PCB
-    [5, 5]
+    [5, 5, yappAllCorners]
 //-   Add posts 25mm from the corners of the box, with a custon height,diameter, Pin Size, hole
 //-   slack and filler radius.
 //  [25, 25, 10, 10, 3.3, 0.9, 5, yappCoordBox] 
@@ -264,7 +263,7 @@ connectors   =
 //-------------------------------------------------------------------
 cutoutsBase = 
 [
-  [65,shellWidth/2 ,55,55, 5, yappPolygon ,0 ,30, yappCenter, shapeHexagon, maskHexCircles]
+//  [65,shellWidth/2 ,55,55, 5, yappPolygon ,0 ,30, yappCenter, shapeHexagon, maskHexCircles]
 // , [0, 0, 10, 10, 0, yappRectangle,maskHexCircles]
 // , [shellLength*2/3,shellWidth/2 ,0, 30, 20, yappCircleWithFlats, yappCenter]
 // , [shellLength/2,shellWidth/2 ,10, 5, 20, yappCircleWithKey,yappCenter]
@@ -272,18 +271,6 @@ cutoutsBase =
 
 cutoutsLid  = 
 [
-//Center test
-  [shellLength/2,   shellWidth/2,  1,  1,  5, yappRectangle ,20 ,45, yappCenter]
- ,[pcbLength/2,       pcbWidth/2,  1,  1,  5, yappRectangle ,20 ,45, yappCenter, yappCoordPCB]
-//Edge tests
- ,[shellLength/2,              0,  2,  2,  5, yappRectangle ,20 ,45, yappCenter]
- ,[shellLength/2,     shellWidth,  2,  2,  5, yappRectangle ,20 ,45, yappCenter]
- ,[0,               shellWidth/2,  2,  2,  5, yappRectangle ,20 ,45, yappCenter]
- ,[shellLength,     shellWidth/2,  2,  2,  5, yappRectangle ,20 ,45, yappCenter]
-
- ,[shellLength*2/3, shellWidth/2,  0, 30, 20, yappCircleWithFlats, yappCenter]
- ,[shellLength/3,   shellWidth/2, 10,  5, 20, yappCircleWithKey,yappCenter]
-
 ];
 
 cutoutsFront =  
@@ -379,25 +366,25 @@ boxMounts =
 //-------------------------------------------------------------------
 lightTubes =
 [
-  [(pcbLength/2)+10, 20,    // [0,1] Pos
-    5, 5,                   // [2,3] Length, Width
-    1,                      // [4]   wall thickness
-    standoffHeight + pcbThickness + 4, // [5] Gap above base bottom
-    yappRectangle,          // [6]   tubeType (Shape)
-    0.5,                    // [7]   lensThickness
-    yappCoordPCB            // [n1]
-  ]
-  ,
-  [(pcbLength/2)+10, 40,    // [0,1] Pos
-    5, 10,                  // [2,3] Length, Width
-    1,                      // [4]   wall thickness
-    standoffHeight + pcbThickness + 4, // [5] Gap above base bottom
-    yappCircle,             // [6]   tubeType (Shape)
-    undef,                  // [7]
-    undef,                  // [8]
-    5,                      // [9]   filletRadius
-    yappCoordPCB            // [n1]
-  ]
+  // [(pcbLength/2)+10, 20,    // [0,1] Pos
+  //   5, 5,                   // [2,3] Length, Width
+  //   1,                      // [4]   wall thickness
+  //   standoffHeight + pcbThickness + 4, // [5] Gap above base bottom
+  //   yappRectangle,          // [6]   tubeType (Shape)
+  //   0.5,                    // [7]   lensThickness
+  //   yappCoordPCB            // [n1]
+  // ]
+  // ,
+  // [(pcbLength/2)+10, 40,    // [0,1] Pos
+  //   5, 10,                  // [2,3] Length, Width
+  //   1,                      // [4]   wall thickness
+  //   standoffHeight + pcbThickness + 4, // [5] Gap above base bottom
+  //   yappCircle,             // [6]   tubeType (Shape)
+  //   undef,                  // [7]
+  //   undef,                  // [8]
+  //   5,                      // [9]   filletRadius
+  //   yappCoordPCB            // [n1]
+  // ]
 ];
 
 //===================================================================
@@ -432,8 +419,8 @@ lightTubes =
 pushButtons = 
 [
 //-               0,   1,  2,  3, 4, 5,   6, 7, 8
-   [(pcbLength/2)+10, 65, 15, 10, 0, 3,   5, 1, 3]
-  ,[(pcbLength/2)+10, 85, 10, 10, 4, 2.0, 4, 1, 4, standoffHeight, yappCircle]
+  //  [(pcbLength/2)+10, 65, 15, 10, 0, 3,   5, 1, 3]
+  // ,[(pcbLength/2)+10, 85, 10, 10, 4, 2.0, 4, 1, 4, standoffHeight, yappCircle]
 ];
              
 //===================================================================
@@ -455,7 +442,7 @@ pushButtons =
 //-------------------------------------------------------------------
 labelsPlane =
 [
-    [5, 5, 0, 1, yappLid, "Liberation Mono:style=bold", 5, "YAPP" ]
+    // [5, 5, 0, 1, yappLid, "Liberation Mono:style=bold", 5, "YAPP" ]
 ];
 
 
