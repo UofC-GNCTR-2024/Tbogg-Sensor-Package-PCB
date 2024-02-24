@@ -317,6 +317,16 @@ cutoutsBack =
 
 cutoutsLeft =   
 [
+  [
+    pcbLength/2,
+    -2,
+    10,
+    2,
+    0.8,
+    yappRoundedRect,
+    0, 0,
+    yappCenter, yappCoordPCB
+  ]
 ];
 
 cutoutsRight =  
@@ -345,8 +355,8 @@ snapJoins   =
     // [15, 10, yappFront, yappCenter,    yappRectangle, yappSymmetric]
   //  ,[25, 10, yappBack,  yappSymmetric, yappCenter]
   //  ,[30, 10, yappLeft,  yappRight,     yappCenter,    yappSymmetric] // base
-   [shellLength/2, 5, yappLeft,  yappRight, yappCenter ], // on long edge
-   // [shellWidth/2, 5, yappFront, yappBack, yappCenter  ], // on short edge
+   [shellLength/2, 4, yappLeft,  yappRight, yappCenter ], // on long edge
+   [shellWidth/2, 4, yappFront, yappBack, yappCenter  ], // on short edge
 ];
 
 //===================================================================
@@ -374,6 +384,7 @@ snapJoins   =
 //-------------------------------------------------------------------
 boxMounts =
 [
+  [5, 3.2, 0, 3, yappLeft, yappRight, yappFront, yappBack, yappLeftOrigin]
 ];
 
 //===================================================================
@@ -502,6 +513,12 @@ labelsPlane =
 //-------------------------------------------------------------------
 ridgeExtLeft =
 [
+  [
+    pcbLength/2,
+    10,
+    11,
+    yappCoordBox
+  ]
 ];
 
 ridgeExtRight =
