@@ -173,7 +173,10 @@ inspectZfromBottom        = true;       //-> View from the inspection cut up
 //    p(5) = standoffPinDiameter Default = standoffPinDiameter;
 //    p(6) = standoffHoleSlack   Default = standoffHoleSlack;
 //    p(7) = filletRadius (0 = auto size)
-//    n(a) = { <yappBoth> | yappLidOnly | yappBaseOnly }
+//    n(b) = { <yappPin>, yappHole, yappTopPin } 
+//             yappPin = Pin on Base and Hole on Lid 
+//             yappHole = Hole on Both
+//             yappTopPin = Hole on Base and Pin on Lid
 //    n(b) = { <yappPin>, yappHole } // Baseplate support treatment
 //    n(c) = { <yappAllCorners>, yappFrontLeft | yappFrontRight | yappBackLeft | yappBackRight }
 //    n(d) = { <yappCoordPCB> | yappCoordBox | yappCoordBoxInside }
@@ -182,10 +185,10 @@ inspectZfromBottom        = true;       //-> View from the inspection cut up
 pcbStands = 
 [
   // Add stands 5mm from each corner of the PCB
-  // [5, 5, yappAllCorners],
+  // [5, 5, yappAllCorners, yappHole],
 
   // Add stands 5mm from each corner, except the frontLeft with the light sensor
-  [5, 5, yappFrontRight, yappBackLeft, yappBackRight]
+  [5, 5, yappFrontRight, yappBackLeft, yappBackRight, yappTopPin]
 
 
 ];
@@ -304,7 +307,7 @@ cutoutsLeft =
   // hole for motion sensor
   [
     pcbLength/2,
-    -5,
+    -1.5,
     0, 0, 5,
     yappCircle,
     0, 0,
