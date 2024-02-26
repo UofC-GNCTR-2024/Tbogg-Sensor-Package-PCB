@@ -57,8 +57,8 @@ pcbWidth            = 52; // side to side (Y axis)
 pcbThickness        = 1.6;
                             
 //-- padding between pcb and inside wall
-paddingFront        = 3;
-paddingBack         = 3;
+paddingFront        = 0; // must be tight to fit USB plug
+paddingBack         = 6; // extra for motion sensor
 paddingRight        = 3;
 paddingLeft         = 3;
 
@@ -181,11 +181,13 @@ inspectZfromBottom        = true;       //-> View from the inspection cut up
 //-------------------------------------------------------------------
 pcbStands = 
 [
-//- Add stands 5mm from each corner of the PCB
-    [5, 5, yappAllCorners]
-//-   Add posts 25mm from the corners of the box, with a custon height,diameter, Pin Size, hole
-//-   slack and filler radius.
-//  [25, 25, 10, 10, 3.3, 0.9, 5, yappCoordBox] 
+  // Add stands 5mm from each corner of the PCB
+  // [5, 5, yappAllCorners],
+
+  // Add stands 5mm from each corner, except the frontLeft with the light sensor
+  [5, 5, yappFrontRight, yappBackLeft, yappBackRight]
+
+
 ];
 
 //===================================================================
@@ -262,10 +264,15 @@ connectors   =
 //-------------------------------------------------------------------
 cutoutsBase = 
 [
-//  [65,shellWidth/2 ,55,55, 5, yappPolygon ,0 ,30, yappCenter, shapeHexagon, maskHexCircles]
-// , [0, 0, 10, 10, 0, yappRectangle,maskHexCircles]
-// , [shellLength*2/3,shellWidth/2 ,0, 30, 20, yappCircleWithFlats, yappCenter]
-// , [shellLength/2,shellWidth/2 ,10, 5, 20, yappCircleWithKey,yappCenter]
+  
+  // cutout for light sensor
+  [
+    pcbLength - 10,
+    5,
+    10, 10, 5,
+    yappCircle,
+    yappCenter
+  ]
 ];
 
 cutoutsLid  = 
@@ -274,7 +281,17 @@ cutoutsLid  =
 
 cutoutsFront =  
 [
-  // TODO: USB port cutout
+  // USB out front
+  [
+    pcbWidth/2, // center of PCB left-right (but actually 0.5mm off-center)
+    pcbThickness + 8, // move up bc it's on the "top" of the PCB
+    9 + 1, // USB width
+    3.5 + 1, // USB height
+    0.8, // corner radius
+    yappRoundedRect,
+    0, 0,
+    yappCenter, yappCoordPCB
+  ]
 ];
 
 
@@ -284,6 +301,15 @@ cutoutsBack =
 
 cutoutsLeft =   
 [
+  // hole for motion sensor
+  [
+    pcbLength/2,
+    -5,
+    0, 0, 5,
+    yappCircle,
+    0, 0,
+    yappCenter, yappCoordPCB
+  ]
 ];
 
 cutoutsRight =  
