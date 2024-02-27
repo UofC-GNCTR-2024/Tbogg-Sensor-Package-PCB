@@ -52,7 +52,7 @@ printLidShell         = true;
 printSwitchExtenders  = true;
 
 //-- pcb dimensions -- very important!!!
-pcbLength           = 97; // front to back (X axis)
+pcbLength           = 67; // front to back (X axis)
 pcbWidth            = 52; // side to side (Y axis)
 pcbThickness        = 1.6;
                             
@@ -74,7 +74,7 @@ lidPlaneThickness   = 1.5;
 //-- space between pcb and lidPlane :=
 //--      (bottonWallHeight+lidWallHeight) - (standoffHeight+pcbThickness)
 baseWallHeight      = 15;
-lidWallHeight       = 15;
+lidWallHeight       = 10;
 
 //-- ridge where base and lid off box can overlap
 //-- Make sure this isn't less than lidWallHeight
@@ -84,7 +84,7 @@ roundRadius         = 3.0;
 
 //-- How much the PCB needs to be raised from the base
 //-- to leave room for solderings and whatnot
-standoffHeight      = 10.0;  //-- used for PCB Supports, Push Button and showPCB
+standoffHeight      = 7.0;  //-- used for PCB Supports, Push Button and showPCB
 standoffDiameter    = 6;
 standoffPinDiameter = 3; // M3 (3.2mm) diameter
 standoffHoleSlack   = 0.4;
@@ -177,7 +177,6 @@ inspectZfromBottom        = true;       //-> View from the inspection cut up
 //             yappPin = Pin on Base and Hole on Lid 
 //             yappHole = Hole on Both
 //             yappTopPin = Hole on Base and Pin on Lid
-//    n(b) = { <yappPin>, yappHole } // Baseplate support treatment
 //    n(c) = { <yappAllCorners>, yappFrontLeft | yappFrontRight | yappBackLeft | yappBackRight }
 //    n(d) = { <yappCoordPCB> | yappCoordBox | yappCoordBoxInside }
 //    n(e) = { yappNoFillet }
@@ -188,7 +187,10 @@ pcbStands =
   // [5, 5, yappAllCorners, yappHole],
 
   // Add stands 5mm from each corner, except the frontLeft with the light sensor
-  [5, 5, yappFrontRight, yappBackLeft, yappBackRight, yappTopPin]
+  [5, 5, yappFrontRight, yappBackLeft, yappBackRight, yappTopPin],
+
+  // In frontLeft, just add the stand on the top-side
+  [5, 5, 0, standoffHeight+pcbThickness, yappFrontLeft, yappTopPin, yappNoFillet]
 
 
 ];
@@ -287,9 +289,9 @@ cutoutsFront =
   // USB out front
   [
     pcbWidth/2, // center of PCB left-right (but actually 0.5mm off-center)
-    pcbThickness + 8, // move up bc it's on the "top" of the PCB
+    pcbThickness + 11, // move up bc it's on the "top" of the PCB
     9 + 1, // USB width
-    3.5 + 1, // USB height
+    3.5 + 2, // USB height
     0.8, // corner radius
     yappRoundedRect,
     0, 0,
@@ -306,7 +308,7 @@ cutoutsLeft =
 [
   // hole for motion sensor
   [
-    pcbLength/2,
+    pcbLength/2 + 5,
     -1.5,
     0, 0, 5,
     yappCircle,
