@@ -2923,7 +2923,7 @@
   (gr_text "BATT" (at 52 75) (layer "F.SilkS") (tstamp e2d0f923-78a8-4d04-8a48-2762e9db24bc)
     (effects (font (size 1 1) (thickness 0.15)) (justify left bottom))
   )
-  (gr_text "Top=GND\nBottom=3V3\n\nEdge Cuts:\nX: 104 - 52 = 52mm\nY: 106 - 39 = 97mm\n\nHoles: M3, inset by 5mm" (at 111.252 37.084) (layer "Cmts.User") (tstamp cfba33dd-fa9b-4781-a7ff-1fd38c745a59)
+  (gr_text "Top=GND\nBottom=3V3\n\nEdge Cuts:\nX: 104 - 52 = 52mm\nY: 106 - 39 = 67mm\n\nHoles: M3, inset by 5mm" (at 111.252 37.084) (layer "Cmts.User") (tstamp cfba33dd-fa9b-4781-a7ff-1fd38c745a59)
     (effects (font (size 1 1) (thickness 0.15)) (justify left bottom))
   )
 
