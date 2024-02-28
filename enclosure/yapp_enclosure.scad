@@ -272,9 +272,18 @@ cutoutsBase =
   
   // cutout for light sensor
   [
-    pcbLength - 10,
+    pcbLength - 8,
+    5.8,
+    0, 0, 3, // radius
+    yappCircle,
+    yappCenter
+  ],
+
+  // hole for antenna
+  [
     5,
-    10, 10, 5,
+    15,
+    0, 0, 2, // radius
     yappCircle,
     yappCenter
   ]
@@ -288,8 +297,8 @@ cutoutsFront =
 [
   // USB out front
   [
-    pcbWidth/2, // center of PCB left-right (but actually 0.5mm off-center)
-    pcbThickness + 11, // move up bc it's on the "top" of the PCB
+    pcbWidth/2 + 0.8, // center of PCB left-right (but actually 0.5mm off-center)
+    pcbThickness + 10, // move up bc it's on the "top" of the PCB
     9 + 1, // USB width
     3.5 + 2, // USB height
     0.8, // corner radius
@@ -309,7 +318,7 @@ cutoutsLeft =
   // hole for motion sensor
   [
     pcbLength/2 + 5,
-    -1.5,
+    3.2,
     0, 0, 5,
     yappCircle,
     0, 0,
@@ -340,9 +349,8 @@ cutoutsRight =
 //-------------------------------------------------------------------
 snapJoins   =   
 [
-    [15, 10, yappFront, yappCenter,    yappRectangle, yappSymmetric]
-   ,[25, 10, yappBack,  yappSymmetric, yappCenter]
-   ,[30, 10, yappLeft,  yappRight,     yappCenter,    yappSymmetric]
+  [15, 10, yappFront, yappBack, yappCenter, yappSymmetric],
+  [20, 10, yappLeft,  yappRight, yappCenter, yappSymmetric],
 ];
 
 //===================================================================
