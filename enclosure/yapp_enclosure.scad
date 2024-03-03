@@ -274,7 +274,7 @@ cutoutsBase =
   [
     pcbLength - 8,
     5.8,
-    0, 0, 3, // radius
+    0, 0, 6, // radius
     yappCircle,
     yappCenter
   ],
